@@ -1,5 +1,7 @@
 # Kit funnel guide: istruzioni
 
+**Prima della sessione:** segui la lista in `PRIMA-DELLA-SESSIONE.md`.
+
 Bastano 3 passi.
 
 1. **Metti i PDF nelle cartelle giuste**, dentro `guide/`:
@@ -13,6 +15,7 @@ Bastano 3 passi.
 3. **Copia tutto il testo del riquadro in `PROMPT-AVVIO.md` e incollalo** in Claude Code.
    Claude lavora uno step alla volta e si ferma sempre ad aspettare il tuo "ok".
    Tutto quello che prepara viene salvato nella cartella `lavoro/`.
+   Per le pagine di vendita c'è un prompt a parte: `PROMPT-PAGINE-VENDITA.md`.
 
 Se interrompi il lavoro, quando riapri Claude Code in questa cartella scrivi:
 `Riprendi dallo step a cui eravamo arrivati (guarda lavoro/stato.md).`

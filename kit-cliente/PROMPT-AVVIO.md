@@ -75,6 +75,8 @@ Metti in cima le cose che richiedono tempo (es. verifica Stripe). Fammi spuntare
 le voci una alla volta e, per ognuna bloccata, dimmi come sbloccarla.
 
 STEP 5. Testi delle pagine
+(Se usiamo PROMPT-PAGINE-VENDITA.md, questo step si salta: le pagine complete
+le crea quel prompt.)
 Per ciascun funnel scrivi in lavoro/05-pagine-A.md e lavoro/05-pagine-B.md:
 pagina di iscrizione (3 titoli a scelta, sottotitolo, 3-4 punti "cosa trovi",
 bottone, nota privacy), pagina offerta (titolo "la guida sta arrivando…", testo
