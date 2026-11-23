@@ -42,11 +42,24 @@ Per ciascun funnel (A e B), 2 pagine:
    m. bottone finale + link piccolo "No grazie, voglio solo la guida gratuita"
    n. piè di pagina: dati legali, link privacy e condizioni
 
-DESIGN
-- Stile elegante e caldo, da interior/casa: tanto spazio bianco, angoli
-  arrotondati, ombre leggere, un solo colore d'accento per i bottoni (dal brand
-  in materiali/, altrimenti proponimene 3 e fammi scegliere).
-- Due font Google: uno serif per i titoli, uno sans-serif leggibile per il testo.
+DESIGN (deve sembrare il mio profilo Instagram: settore immobiliare/interior,
+minimal ma valorizzante e di stile)
+- Palette calda e neutra: fondo avorio/sabbia (#F5F0E8 circa), testo
+  marrone-taupe scuro (#3B302A circa), linee sottili color tortora. Accento per
+  bottoni e dettagli: bordeaux (#7A1F2B circa). Colori secondari da usare con
+  moderazione: blu polvere (#8FA3B8), cioccolato (#5A3A2A), verde salvia (#8A9A86).
+  Se in materiali/ c'è colori.txt, quello ha la precedenza.
+- Tipografia come nei miei post: titoli in serif elegante e sottile (es.
+  Cormorant Garamond) con UNA parola chiave in corsivo per titolo (es. "Quest'anno
+  il *Natale* lo crei tu"); firma "SIRIANA FINOTTI" in maiuscoletto piccolo con
+  lettere molto spaziate, sopra una linea sottile corta; testo in sans-serif
+  pulito (es. Jost o Montserrat light/regular).
+- Tanto spazio vuoto, foto di interni grandi e luminose, angoli appena
+  arrotondati o netti, niente ombre pesanti, niente emoji nei titoli, niente
+  colori accesi o effetti "da marketing aggressivo". Bottoni sobri: pieni in
+  bordeaux con testo avorio, oppure bordo sottile.
+- Le immagini sono la parte più importante: usa le foto di interni e le
+  copertine in materiali/, a tutta larghezza nell'hero.
 - Mobile first: la maggior parte arriva da Instagram, quindi deve essere perfetta
   sul telefono (testo minimo 17px, bottoni grandi, una colonna).
 - Bottoni con testi d'azione specifici, mai solo "Acquista".
