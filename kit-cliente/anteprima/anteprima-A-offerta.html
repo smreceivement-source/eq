@@ -1,0 +1,230 @@
+<title>Anteprima Landing Siriana</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap">
+<style>
+/* Layout: colonna unica stretta stile editoriale d'interni, fotografie a tutta larghezza, firma spaziata come nei post */
+:root{
+  --avorio:#F5F0E8; --sabbia:#EBE3D6; --taupe:#3B302A; --tortora:#A8998A;
+  --bordeaux:#7A1F2B; --salvia:#8A9A86; --carta:#FBF8F3;
+  --serif:"Cormorant Garamond", "Times New Roman", serif;
+  --sans:"Jost", "Helvetica Neue", Arial, sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--avorio);color:var(--taupe);font-family:var(--sans);font-weight:300;font-size:17px;line-height:1.65}
+.wrap{max-width:680px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--serif);font-weight:300;line-height:1.12;text-wrap:balance;margin:0}
+h1{font-size:clamp(2.3rem,7vw,3.4rem)}
+h2{font-size:clamp(1.9rem,5.5vw,2.6rem)}
+h1 em,h2 em{font-style:italic;font-weight:300}
+p{margin:0}
+.firma{display:flex;flex-direction:column;gap:.7rem;align-items:flex-start}
+.firma::before{content:"";width:56px;height:1px;background:var(--tortora)}
+.firma span{font-size:.68rem;letter-spacing:.42em;text-transform:uppercase;font-weight:400}
+.nota-anteprima{background:var(--taupe);color:var(--avorio);font-size:.78rem;letter-spacing:.04em;text-align:center;padding:.55rem 16px}
+.conferma{background:var(--sabbia);padding-block:1rem}
+.conferma .wrap{display:flex;flex-direction:column;gap:.6rem}
+.conferma p{font-size:.92rem}
+.barra{height:3px;background:var(--carta);position:relative}
+.barra::after{content:"";position:absolute;inset:0 0 0 0;width:100%;background:var(--bordeaux)}
+.passo{font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--tortora)}
+.foto{position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:1rem;color:var(--carta);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase}
+.foto small{background:rgba(59,48,42,.55);padding:.3rem .6rem;font-size:inherit}
+.foto-hero{aspect-ratio:4/5;max-width:100%;background:
+  radial-gradient(ellipse at 70% 18%,rgba(255,236,200,.55),transparent 45%),
+  linear-gradient(180deg,#cbb9a2 0%,#b39b80 55%,#8e765f 100%)}
+@media (min-width:720px){.foto-hero{aspect-ratio:16/10}}
+.hero{padding-block:2.6rem 3rem}
+.hero .wrap{display:flex;flex-direction:column;gap:1.4rem}
+.sopra{font-size:.7rem;letter-spacing:.32em;text-transform:uppercase;color:var(--bordeaux);font-weight:400}
+.lead{font-size:1.08rem;max-width:34em}
+.btn{display:inline-block;align-self:flex-start;background:var(--bordeaux);color:var(--carta);text-decoration:none;font-family:var(--sans);font-weight:400;font-size:.82rem;letter-spacing:.22em;text-transform:uppercase;padding:1.05rem 1.8rem;border:0;cursor:pointer}
+.btn:hover{background:#651823}
+.btn:focus-visible{outline:2px solid var(--taupe);outline-offset:3px}
+section.blocco{padding-block:3.4rem;border-top:1px solid rgba(168,153,138,.35)}
+section.blocco .wrap{display:flex;flex-direction:column;gap:1.6rem}
+.lista{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1rem}
+.lista li{display:grid;grid-template-columns:28px 1fr;gap:.8rem;align-items:baseline}
+.lista li::before{content:"";width:18px;height:1px;background:var(--bordeaux);transform:translateY(-4px)}
+.duo{display:grid;grid-template-columns:1fr;gap:1rem}
+@media (min-width:620px){.duo{grid-template-columns:1fr 1fr}}
+.foto-sq{aspect-ratio:1/1;max-width:100%}
+.f1{background:linear-gradient(160deg,#d9c9b4,#a88f74)}
+.f2{background:linear-gradient(160deg,#9aa6a0,#6f7d76)}
+.f3{background:linear-gradient(160deg,#8f2f3a,#5a1a22)}
+.f4{background:linear-gradient(160deg,#c8b8a6,#8d7a68)}
+.dentro{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid rgba(168,153,138,.45)}
+@media (min-width:620px){.dentro{grid-template-columns:1fr 1fr;column-gap:2rem}}
+.dentro div{padding-block:1.1rem;border-bottom:1px solid rgba(168,153,138,.45);display:flex;flex-direction:column;gap:.25rem;min-width:0}
+.dentro b{font-family:var(--serif);font-weight:400;font-size:1.3rem}
+.dentro span{font-size:.94rem}
+.perchi{display:grid;grid-template-columns:1fr;gap:1.4rem}
+@media (min-width:620px){.perchi{grid-template-columns:1fr 1fr}}
+.perchi div{display:flex;flex-direction:column;gap:.7rem}
+.perchi h3{font-size:1.45rem}
+.perchi ul{margin:0;padding-left:1.1rem;display:flex;flex-direction:column;gap:.45rem;font-size:.95rem}
+.chisono{display:grid;grid-template-columns:1fr;gap:1.4rem;align-items:center}
+@media (min-width:620px){.chisono{grid-template-columns:220px 1fr}}
+.ritratto{aspect-ratio:3/4;max-width:100%;background:linear-gradient(170deg,#7d6a5c,#4a3b32)}
+.segnaposto{border:1px dashed var(--tortora);padding:1.4rem;font-size:.9rem;color:var(--tortora);text-align:center}
+.offerta{background:var(--carta);padding:2rem 1.5rem;display:flex;flex-direction:column;gap:1.1rem;border:1px solid rgba(168,153,138,.5)}
+.offerta ul{margin:0;padding-left:1.1rem;display:flex;flex-direction:column;gap:.4rem}
+.prezzo{font-family:var(--serif);font-size:3rem;line-height:1}
+.prezzo small{font-family:var(--sans);font-size:.85rem;color:var(--tortora);margin-left:.5rem}
+.modulo{background:#fff;border:1px solid #d9d2c7;padding:1.4rem;display:flex;flex-direction:column;gap:.9rem}
+.modulo .etichetta{font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--tortora)}
+.campo{height:46px;border:1px solid #d9d2c7;background:#fbfaf8;display:flex;align-items:center;padding:0 .9rem;font-size:.9rem;color:#9a9087}
+.bump{border:1.5px dashed var(--bordeaux);background:#fbf3f1;padding:1rem;display:grid;grid-template-columns:22px 1fr;gap:.7rem;font-size:.92rem}
+.bump input{width:18px;height:18px;accent-color:var(--bordeaux);margin-top:3px}
+.bump b{font-weight:500}
+.modulo .btn{align-self:stretch;text-align:center}
+.sicuro{font-size:.78rem;color:var(--tortora);text-align:center}
+details{border-bottom:1px solid rgba(168,153,138,.45);padding-block:1rem}
+details summary{cursor:pointer;font-family:var(--serif);font-size:1.25rem;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+details summary::after{content:"+";font-family:var(--sans);font-weight:300}
+details[open] summary::after{content:"–"}
+details p{padding-top:.6rem;font-size:.95rem}
+.finale{text-align:left}
+.nograzie{font-size:.85rem;color:var(--tortora);text-decoration:underline;text-underline-offset:3px}
+footer{padding-block:2.4rem;background:var(--sabbia);font-size:.75rem;color:var(--tortora)}
+footer .wrap{display:flex;flex-direction:column;gap:1rem}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+
+<div class="nota-anteprima">Anteprima · Funnel A, pagina offerta · foto, testi e prezzi sono segnaposto</div>
+
+<div class="conferma">
+  <div class="wrap">
+    <p>✓ La tua guida <em>"Natale con ciò che c'è"</em> sta arrivando nella tua email.</p>
+    <div class="barra" aria-hidden="true"></div>
+    <span class="passo">Passo 2 di 2 · Un'ultima cosa prima di andare</span>
+  </div>
+</div>
+
+<div class="foto foto-hero"><small>Foto: interno luminoso di un tuo lavoro</small></div>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="sopra">Guida operativa · Valorizzazione casa</span>
+    <h1>Il Natale passa.<br>Il <em>valore</em> della tua casa resta.</h1>
+    <p class="lead">Una guida pratica per rendere la tua casa più bella, più vivibile e più appetibile, con scelte mirate su colori, luce e arredo, senza ristrutturare.</p>
+    <a class="btn" href="#ordine">Voglio valorizzare la mia casa</a>
+    <div class="firma"><span>Siriana Finotti</span></div>
+  </div>
+</header>
+
+<section class="blocco">
+  <div class="wrap">
+    <h2>Ti <em>riconosci</em>?</h2>
+    <ul class="lista">
+      <li>Guardi la tua casa e senti che manca qualcosa, ma non sai cosa.</li>
+      <li>Hai comprato oggetti belli che insieme non funzionano.</li>
+      <li>Pensi di vendere o affittare e temi che la casa valga meno di quello che potrebbe.</li>
+      <li>Vorresti un risultato da rivista senza spendere come per una ristrutturazione.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="blocco">
+  <div class="wrap">
+    <h2>La guida che viene <em>dopo</em> le decorazioni</h2>
+    <p>La guida di Natale ti ha mostrato come trasformare un ambiente con ciò che hai già. Questa ti porta un passo oltre: le scelte che restano tutto l'anno e cambiano il modo in cui la tua casa viene percepita, da te e da chi entra.</p>
+    <div class="duo">
+      <div class="foto foto-sq f1"><small>Foto lavoro 1</small></div>
+      <div class="foto foto-sq f2"><small>Foto lavoro 2</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="blocco">
+  <div class="wrap">
+    <h2>Cosa trovi <em>dentro</em></h2>
+    <div class="dentro">
+      <div><b>I colori giusti</b><span>Come scegliere la palette per ogni stanza, dal bordeaux al blu polvere.</span></div>
+      <div><b>La luce</b><span>Dove mettere i punti luce per far sembrare gli spazi più ampi.</span></div>
+      <div><b>Gli errori che svalutano</b><span>I dettagli che abbassano la percezione di valore.</span></div>
+      <div><b>Interventi a basso costo</b><span>Cosa cambiare prima, con l'impatto maggiore.</span></div>
+      <div><b>Tessili e materiali</b><span>Come dare calore e coerenza senza appesantire.</span></div>
+      <div><b>Checklist finale</b><span>La lista da seguire stanza per stanza.</span></div>
+    </div>
+    <p style="font-size:.8rem;color:var(--tortora)">Questi 6 punti vengono presi dal PDF vero quando lanci il prompt.</p>
+  </div>
+</section>
+
+<section class="blocco">
+  <div class="wrap">
+    <div class="perchi">
+      <div><h3>È per te se…</h3><ul><li>vuoi una casa che ti somigli e che valga di più</li><li>stai pensando di vendere o affittare</li><li>preferisci istruzioni pratiche alla teoria</li></ul></div>
+      <div><h3>Non è per te se…</h3><ul><li>cerchi un progetto di ristrutturazione completo</li><li>non vuoi cambiare nulla di quello che hai</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="blocco">
+  <div class="wrap">
+    <div class="chisono">
+      <div class="foto ritratto"><small>Tua foto</small></div>
+      <div style="display:flex;flex-direction:column;gap:1rem;min-width:0">
+        <h2>Sono <em>Siriana</em></h2>
+        <p>Aiuto proprietari e host a valorizzare case e immobili in affitto con scelte di stile concrete, accessibili e pensate per durare.</p>
+        <div class="firma"><span>Siriana Finotti</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blocco">
+  <div class="wrap">
+    <h2>Cosa <em>dicono</em></h2>
+    <div class="segnaposto">Qui vanno solo recensioni vere dalla cartella Foto. Se non ci sono, la sezione si toglie.</div>
+  </div>
+</section>
+
+<section class="blocco" id="ordine">
+  <div class="wrap">
+    <div class="offerta">
+      <span class="sopra">Prezzo riservato a chi ha scaricato la guida gratuita</span>
+      <h2>Valorizzazione <em>Casa</em></h2>
+      <ul><li>Guida PDF operativa, da leggere su telefono o computer</li><li>Checklist stanza per stanza</li><li>Accesso immediato dopo il pagamento</li></ul>
+      <div class="prezzo">€ 27<small>prezzo di esempio</small></div>
+    </div>
+    <div class="modulo" aria-label="Simulazione del modulo d'ordine Systeme">
+      <span class="etichetta">Modulo d'ordine nativo Systeme</span>
+      <div class="campo">Nome</div>
+      <div class="campo">Email</div>
+      <div class="campo">Dati della carta · Stripe</div>
+      <label class="bump"><input type="checkbox" id="bump" checked><span><b>Sì, aggiungi la Palette Colori stampabile a soli 7 €.</b> Le combinazioni pronte da portare in negozio. (esempio di order bump)</span></label>
+      <button class="btn" type="button">Ricevi la guida adesso</button>
+      <p class="sicuro">Pagamento sicuro con Stripe · Ricevi tutto via email in pochi secondi</p>
+    </div>
+  </div>
+</section>
+
+<section class="blocco">
+  <div class="wrap">
+    <h2>Domande <em>frequenti</em></h2>
+    <div>
+      <details><summary>In che formato è la guida?</summary><p>È un PDF, lo leggi da telefono, tablet o computer e puoi stamparlo.</p></details>
+      <details><summary>Come la ricevo?</summary><p>Subito dopo il pagamento ti arriva un'email con il link per scaricarla.</p></details>
+      <details><summary>Quanto tempo serve per applicarla?</summary><p>Puoi iniziare dalla prima stanza in un pomeriggio.</p></details>
+      <details><summary>Serve ristrutturare?</summary><p>No, la guida lavora su colori, luce, arredo e dettagli.</p></details>
+      <details><summary>Il pagamento è sicuro?</summary><p>Sì, i pagamenti passano da Stripe e i dati della carta non vengono salvati da noi.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="blocco finale">
+  <div class="wrap">
+    <h2>La tua casa può <em>valere</em> di più.</h2>
+    <a class="btn" href="#ordine">Voglio la guida</a>
+    <a class="nograzie" href="#">No grazie, voglio solo la guida gratuita</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="firma"><span>Siriana Finotti</span></div>
+    <p>P.IVA [da inserire] · Privacy policy · Condizioni di vendita</p>
+  </div>
+</footer>
