@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8">
+<title>MOUSSA FIT overlays</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;0,700;0,800;1,800;1,900&display=swap" rel="stylesheet">
+<style>
+/* MOUSSA FIT — brand tokens */
+:root{
+  --green:#0E8A6A; --red:#E3262B; --yellow:#FFC72C; --teal:#12907A;
+  --ink:#121212; --glass:rgba(14,14,14,.72); --white:#fff; --muted:rgba(255,255,255,.7);
+  --stripe:linear-gradient(90deg,var(--green) 0 33.3%,var(--red) 33.3% 66.6%,var(--yellow) 66.6%);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden;font-family:Montserrat,sans-serif;color:#fff}
+body.preview{background:url(../preview/bg.jpg) center/cover,#222}
+body.alpha{background:transparent}
+.layer{position:absolute;inset:0;display:none}
+.layer.on{display:block}
+#bug{z-index:5}
+
+/* Logo bug */
+.bug{position:absolute;top:44px;left:52px;display:flex;align-items:center;gap:16px}
+.bug img{width:96px;height:96px;filter:drop-shadow(0 6px 18px rgba(0,0,0,.5))}
+.bug .t{font:italic 900 30px/1 Montserrat;letter-spacing:.5px}
+.bug .t b{color:var(--yellow)}
+.bug .s{font:600 13px/1 Montserrat;letter-spacing:4px;color:var(--muted);margin-top:6px}
+
+/* Exercise name lower third */
+.l3{position:absolute;left:96px;bottom:110px}
+.l3 .k{display:inline-block;font:800 20px/1 Montserrat;letter-spacing:6px;color:var(--ink);background:var(--yellow);padding:10px 16px;border-radius:6px}
+.l3 .n{font:italic 900 104px/1 Montserrat;text-transform:uppercase;margin-top:14px;text-shadow:0 6px 30px rgba(0,0,0,.55)}
+.l3 .d{font:600 26px/1.2 Montserrat;color:var(--muted);margin-top:10px;letter-spacing:1px}
+.l3 .bar{height:8px;width:360px;background:var(--stripe);border-radius:4px;margin-top:18px}
+
+/* Counter / timer ring */
+.ring{position:absolute;top:56px;right:64px;width:290px;height:290px;border-radius:50%;background:var(--glass);backdrop-filter:blur(10px);display:grid;place-items:center}
+.ring svg{position:absolute;inset:0}
+.ring .v{font:italic 900 128px/1 Montserrat;letter-spacing:-2px}
+.ring .u{position:absolute;bottom:58px;font:800 18px/1 Montserrat;letter-spacing:5px;color:var(--yellow)}
+.ring .top{position:absolute;top:56px;font:700 16px/1 Montserrat;letter-spacing:4px;color:var(--muted)}
+.ring.timer .v{font-size:96px}
+
+/* Pause panel (left) */
+.pause{position:absolute;left:0;top:0;bottom:0;width:760px;background:linear-gradient(90deg,rgba(10,10,10,.92) 70%,rgba(10,10,10,0));padding:150px 0 0 96px}
+.pause .lab{font:800 22px/1 Montserrat;letter-spacing:8px;color:var(--teal)}
+.pause .big{font:italic 900 180px/1 Montserrat;margin:8px 0 6px;letter-spacing:-3px}
+.pause .prog{width:520px;height:10px;background:rgba(255,255,255,.15);border-radius:5px;overflow:hidden}
+.pause .prog i{display:block;height:100%;width:62%;background:var(--stripe)}
+.pause .next{margin-top:54px;font:800 18px/1 Montserrat;letter-spacing:6px;color:var(--yellow)}
+.pause .card{margin-top:16px;width:560px;border-radius:22px;overflow:hidden;border:3px solid var(--yellow);box-shadow:0 20px 60px rgba(0,0,0,.6);position:relative}
+.pause .card .vid{height:315px;background:url(../preview/next.jpg) center/cover,#333}
+.pause .card .nm{position:absolute;left:0;right:0;bottom:0;padding:40px 24px 18px;background:linear-gradient(transparent,rgba(0,0,0,.85));font:italic 900 40px/1 Montserrat;text-transform:uppercase}
+.pause .card .nm small{display:block;font:600 18px/1.3 Montserrat;font-style:normal;color:var(--muted);text-transform:none;margin-top:6px}
+.pause .tip{margin-top:26px;font:600 24px/1.35 Montserrat;color:var(--muted);width:540px}
+.pause .tip b{color:#fff}
+
+/* Variant PiP (right) */
+.var{position:absolute;right:64px;bottom:96px;width:520px;border-radius:22px;overflow:hidden;border:3px solid var(--red);background:var(--glass);box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.var .tag{position:absolute;top:16px;left:16px;font:800 16px/1 Montserrat;letter-spacing:5px;background:var(--red);padding:9px 14px;border-radius:6px;z-index:2}
+.var .vid{height:292px;background:url(../preview/variant.jpg) center/cover,#333}
+.var .nm{padding:16px 22px 20px;font:italic 900 32px/1.05 Montserrat;text-transform:uppercase}
+.var .nm small{display:block;font:600 17px/1.3 Montserrat;font-style:normal;color:var(--muted);text-transform:none;margin-top:6px}
+
+/* Subtitles (intro only) */
+.sub{position:absolute;left:50%;bottom:86px;transform:translateX(-50%);max-width:1400px;text-align:center;font:700 46px/1.25 Montserrat;padding:12px 28px;border-radius:12px;background:rgba(0,0,0,.55)}
+.sub em{font-style:normal;color:var(--yellow)}
+
+/* Instagram card */
+.ig{position:absolute;right:64px;top:64px;width:560px;border-radius:26px;background:var(--glass);backdrop-filter:blur(14px);padding:26px;display:flex;gap:22px;align-items:center;border:1px solid rgba(255,255,255,.12)}
+.ig .av{width:120px;height:120px;border-radius:50%;padding:5px;background:conic-gradient(var(--yellow),var(--red),var(--green),var(--yellow))}
+.ig .av img{width:100%;height:100%;border-radius:50%;background:#111}
+.ig .h{font:800 26px/1.1 Montserrat}
+.ig .h small{display:block;font:600 17px/1.3 Montserrat;color:var(--muted);margin-top:6px}
+.ig .cta{display:inline-block;margin-top:14px;font:800 16px/1 Montserrat;letter-spacing:3px;color:var(--ink);background:var(--yellow);padding:12px 20px;border-radius:999px}
+
+/* Title card (intro / outro) */
+.title{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(20,20,20,.55),rgba(8,8,8,.96));display:grid;place-items:center;text-align:center}
+.title img.logo{width:300px;height:300px}
+.title img.wm{width:760px;mix-blend-mode:lighten;margin-top:10px}
+.title .h{font:italic 900 72px/1 Montserrat;margin-top:16px;text-transform:uppercase}
+.title .k{font:700 22px/1 Montserrat;letter-spacing:10px;color:var(--yellow);margin-top:18px}
+.title .bar{height:6px;width:140px;background:var(--yellow);margin:22px auto 0;border-radius:3px}
+</style></head>
+<body class="preview">
+
+<div class="layer" id="bug"><div class="bug"><img src="../assets/logo_mc_dark.png" alt=""><div><div class="t">MOUSSA<b>FIT</b></div><div class="s">BY COACH MOUSSA</div></div></div></div>
+
+<div class="layer" id="name"><div class="l3"><span class="k">ESERCIZIO 01</span><div class="n" data-f="name">Squat</div><div class="d" data-f="desc">Schiena dritta · peso sui talloni</div><div class="bar"></div></div></div>
+
+<div class="layer" id="reps"><div class="ring"><svg viewBox="0 0 290 290"><circle cx="145" cy="145" r="132" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="12"/><circle cx="145" cy="145" r="132" fill="none" stroke="#FFC72C" stroke-width="12" stroke-linecap="round" stroke-dasharray="829" stroke-dashoffset="290" transform="rotate(-90 145 145)"/></svg><div class="top">MANCANO</div><div class="v" data-f="reps">13</div><div class="u">RIPETIZIONI</div></div></div>
+
+<div class="layer" id="timer"><div class="ring timer"><svg viewBox="0 0 290 290"><circle cx="145" cy="145" r="132" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="12"/><circle cx="145" cy="145" r="132" fill="none" stroke="#12907A" stroke-width="12" stroke-linecap="round" stroke-dasharray="829" stroke-dashoffset="373" transform="rotate(-90 145 145)"/></svg><div class="top">LAVORO</div><div class="v" data-f="time">0:11</div><div class="u">SECONDI</div></div></div>
+
+<div class="layer" id="pause"><div class="pause"><div class="lab">PAUSA · RECUPERA</div><div class="big" data-f="ptime">0:19</div><div class="prog"><i></i></div><div class="next">PROSSIMO ESERCIZIO</div><div class="card"><div class="vid"></div><div class="nm">Alzate laterali<small>20 secondi · manubri leggeri</small></div></div><div class="tip"><b>Respira</b> e bevi un sorso d'acqua. Si riparte insieme.</div></div></div>
+
+<div class="layer" id="variant"><div class="var"><span class="tag">VARIANTE</span><div class="vid"></div><div class="nm">Squat con sedia<small>Se non riesci a scendere in squat completo</small></div></div></div>
+
+<div class="layer" id="sub"><div class="sub">Benvenuti in <em>MOUSSA FIT</em>! Oggi ci alleniamo insieme, total body.</div></div>
+
+<div class="layer" id="ig"><div class="ig"><div class="av"><img src="../assets/logo_mc_dark.png" alt=""></div><div><div class="h">@moussa_cisse_personal_trainer<small>Personal Trainer · MOUSSA FIT</small></div><span class="cta">SEGUIMI SU INSTAGRAM</span></div></div></div>
+
+<div class="layer" id="intro"><div class="title"><div><img class="logo" src="../assets/logo_mc_dark.png" alt=""><br><img class="wm" src="../assets/wordmark_raw.png" alt=""><div class="h">Full Body Workout</div><div class="k">ALLENATI CON ME · 18 MIN</div><div class="bar"></div></div></div></div>
+
+<script>
+// ?show=bug,name&name=Squat&reps=13&alpha=1
+const q=new URLSearchParams(location.search);
+if(q.get('alpha')) document.body.className='alpha';
+(q.get('show')||'bug,name,reps').split(',').forEach(id=>document.getElementById(id)?.classList.add('on'));
+document.querySelectorAll('[data-f]').forEach(el=>{const v=q.get(el.dataset.f); if(v!==null) el.textContent=v;});
+</script>
+</body></html>
